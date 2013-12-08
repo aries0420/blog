@@ -4,13 +4,28 @@
 # Vagrantfile API/syntax version. Don't touch unless you know what you're doing!
 VAGRANTFILE_API_VERSION = "2"
 
-Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
+Vagrant.configure("2") do |config|
   # All Vagrant configuration is done here. The most common configuration
   # options are documented and commented below. For a complete reference,
   # please see the online documentation at vagrantup.com.
 
+  config.berkshelf.enabled = true
+
   # Every Vagrant virtual environment requires a box to build off of.
   config.vm.box = "base"
+
+  # config.vm.box = "dummy"
+
+  # config.vm.provider :aws do |aws, override|
+  #  aws.access_key_id = "AKIAJVE7UYLEHIJZIYUQ"
+  #  aws.secret_access_key = "Rsd/OSe7680P1XVOYrFn6N+vJnWv8cl/DaMrg2ri"
+  #  aws.keypair_name = "codefellows"
+
+  #  aws.ami = "ami-be1c848e"
+
+  #  override.ssh.username = "ec2-user"
+  #  override.ssh.private_key_path = "~/Documents/AWS/codefellows/codefellows.pem"
+  # end
 
   # The url from where the 'config.vm.box' box will be fetched if it
   # doesn't already exist on the user's system.
@@ -19,7 +34,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # Create a forwarded port mapping which allows access to a specific port
   # within the machine from a port on the host machine. In the example below,
   # accessing "localhost:8080" will access port 80 on the guest machine.
-  # config.vm.network :forwarded_port, guest: 80, host: 8080
+  config.vm.network :forwarded_port, guest: 80, host: 8080, auto_correct: true
+  # config.vm.forward_port 80, 8080
 
   # Create a private network, which allows host-only access to the machine
   # using a specific IP.

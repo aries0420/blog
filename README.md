@@ -1,6 +1,4 @@
-README.md
-
-A simple blog - Work In Progress
+A simple blog
 ========================
 by Kangie Chan
 

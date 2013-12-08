@@ -1,0 +1,8 @@
+SECRET_TOKEN: "find_your_own_30_characters"
+AWS_ACCESS_KEY_ID: "xxx"
+AWS_SECRET_ACCESS_KEY: "xxx"
+AWS_S3_BUCKET: "xxx"
+AWS_KEYPAIR_NAME: "xxx"
+AWS_AMI: "ami-xxxxxxxx"
+AWS_SSH_USERNAME: "xxx"
+AWS_SSH_PRIVATE_KEY_PATH: "some_path"
